@@ -325,11 +325,24 @@
     .nav-links { display: none; }
     .nav-dot { font-size: 11px; }
 
-    .hero { padding: 80px 20px 40px; min-height: 100vh; }
-    h1 { font-size: 52px; letter-spacing: -1px; }
-    .hero-name { font-size: 52px; }
-    .hero-sub { font-size: 14px; }
-    .hero-actions { flex-direction: column; }
+    /* HERO FIX — remove left offset, full width */
+    .hero { 
+      padding: 80px 20px 40px; 
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .hero-content {
+      padding: 0 !important;
+      width: 100%;
+      max-width: 100%;
+    }
+    .hero-greeting { font-size: 11px; }
+    h1 { font-size: 48px; letter-spacing: -1px; }
+    .hero-name { font-size: 48px; }
+    .hero-role { font-size: 13px; max-width: 100%; }
+    .hero-actions { flex-direction: column; width: 100%; }
     .btn { width: 100%; justify-content: center; }
 
     .about-strip { padding: 40px 20px; text-align: center; justify-items: center; }
@@ -342,15 +355,54 @@
     .stat-num { font-size: 36px; }
     .stat-label { font-size: 10px; }
 
+    /* PROJECT CARDS FIX */
     .work { padding: 48px 20px; }
     h2 { font-size: 28px; }
-    .project-card { padding: 24px 20px; }
-    .project-card.wide { padding: 24px 20px; }
-    .project-num { font-size: 32px; top: 20px; right: 20px; }
+    .projects-grid { grid-template-columns: 1fr; gap: 2px; }
+    .project-card { 
+      padding: 24px 20px; 
+      grid-template-columns: 36px 1fr;
+      gap: 16px;
+      overflow: hidden;
+    }
+    .project-card.wide { 
+      padding: 24px 20px;
+      grid-template-columns: 36px 1fr;
+    }
+    .project-num { font-size: 22px; top: 20px; right: 16px; }
+    
+    /* FIX TITLE TRUNCATION */
+    .project-title { 
+      white-space: normal !important;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      font-size: 11px !important;
+      letter-spacing: 0.08em !important;
+    }
+    
+    /* FIX DESCRIPTION TRUNCATION */
+    .project-desc {
+      white-space: normal;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      font-size: 12px;
+      max-width: 100%;
+    }
+    
+    /* FIX PIPELINE OVERFLOW */
+    .pipeline { 
+      flex-wrap: wrap;
+      gap: 4px;
+      overflow-x: visible;
+    }
+    .pip { font-size: 10px; padding: 4px 8px; flex-shrink: 1; }
+    .arr { padding: 0 3px; font-size: 10px; }
 
-    .pipeline { gap: 0; }
-    .pip { font-size: 10px; padding: 4px 8px; }
-    .arr { padding: 0 4px; font-size: 10px; }
+    /* FIX TAGS OVERFLOW */
+    .case-tags, .project-tags {
+      flex-wrap: wrap;
+    }
+    .ptag { font-size: 10px; padding: 3px 7px; }
 
     .skills-bg .skills-inner { padding: 48px 20px; }
     .sg { padding: 24px 20px; }
@@ -609,4 +661,3 @@
 </script>
 </body>
 </html>
-
